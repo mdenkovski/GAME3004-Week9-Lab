@@ -95,4 +95,16 @@ public class PlayerBehaviour : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
         Gizmos.DrawLine(playerCamera.position, playerCamera.forward * 100.0f);
     }
+
+
+    public void OnYButtonPressed()
+    {
+        velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
+    }
+
+    public void OnBButtonPressed()
+    {
+        miniMapBorder.SetActive(!miniMapBorder.activeInHierarchy);
+    }
+
 }
