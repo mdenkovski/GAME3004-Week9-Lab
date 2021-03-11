@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    //control properties
+    [Header("Controlls")]
+    public Joystick LeftStick;
+
     // Movement Properties
     [Header("Movement")] 
     public float maxSpeed = 10.0f;
@@ -57,9 +61,12 @@ public class PlayerBehaviour : MonoBehaviour
             velocity.y = -2.0f;
         }
 
+        float x = LeftStick.Horizontal;
+        float z = LeftStick.Vertical;
+
         // movement
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        //float x = Input.GetAxis("Horizontal");
+       // float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
 
